@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Mail;
 use App\Models\Job;
 use App\Models\Employer;
 use App\Models\User;
+use App\Mail\JobPosted;
 
 class JobController extends Controller
 {
@@ -33,8 +35,8 @@ class JobController extends Controller
             'employer_id' => $employer->id
         ]);
 
-        Illuminate\Support\Facades\Mail::to($job->employer->user)->queue(
-            new App\Mail\JobPosted($job)
+        Mail::to($job->employer->user)->queue(
+            new JobPosted($job)
         );
 
         return redirect('/jobs/' . $job->id);

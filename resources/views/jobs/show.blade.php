@@ -8,9 +8,11 @@
     <h1><strong>Employer Name:</strong> {{ $job->employer->user->name }}</h1>
 
         <div class="flex items-center justify-between gap-x-6 mt-10">
+
             @can('edit', $job)
-            <x-button href="/jobs/{{ $job->id }}/edit" bg_color="yellow">Edit Job</x-button>
+                <x-button href="/jobs/{{ $job->id }}/edit" bg_color="yellow">Edit Job</x-button>
             @endcan
+
             <x-button href="/jobs" bg_color="gray">Back to Listings</x-button>
         </div>
 </x-layout>

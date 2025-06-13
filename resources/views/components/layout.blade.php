@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    @vite('resources/css/app.css')
+    <title>My Job Site</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!--vite('resources/css/app.css') This is a headache too. Why must I figure out how tailwind works with this deadline? -->
 </head>
 <body class="h-full">
     <div class="min-h-full">
